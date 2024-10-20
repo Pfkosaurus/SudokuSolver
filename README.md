@@ -1,6 +1,7 @@
 Sudoku Solver Application
 Overview
 This project is a web-based Sudoku Solver built using Java and Spring Boot. The application allows users to input their own Sudoku puzzle, validate the input for correctness, and solve the puzzle automatically. It also includes a feature to regenerate an empty Sudoku board, allowing users to enter a new puzzle.
+This project is one day challenge just for fun, because what you can do with free time during vacation? :D
 
 Features
 Sudoku Puzzle Input: Users can enter their own Sudoku puzzle with partial numbers.
