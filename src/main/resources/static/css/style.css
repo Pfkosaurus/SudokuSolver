@@ -1,0 +1,137 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Title and headers */
+h1 {
+    font-size: 2.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* Sudoku grid styling */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td {
+    border: 1px solid #cccccc;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input[type="number"] {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #f9fafb;
+    border: none;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    background-color: #dbeafe;
+    border: 2px solid #3b82f6;
+}
+
+/* Grouping 3x3 sections */
+table tr:nth-child(3n) td {
+    border-bottom: 2px solid #555555;
+}
+
+table tr td:nth-child(3n) {
+    border-right: 2px solid #555555;
+}
+
+/* Buttons */
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+button:active {
+    background-color: #1e40af;
+}
+
+/* Specific button styles */
+button#solve {
+    background-color: #10b981;
+}
+
+button#solve:hover {
+    background-color: #059669;
+}
+
+button#regenerate {
+    background-color: #ef4444;
+}
+
+button#regenerate:hover {
+    background-color: #dc2626;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ef4444;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    td {
+        width: 35px;
+        height: 35px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

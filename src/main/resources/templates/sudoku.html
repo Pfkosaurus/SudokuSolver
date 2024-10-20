@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title>Sudoku Solver</title>
+    <script>
+        function handleEmptyInputs() {
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                if (!input.value) {
+                    input.value = 0;  // if cell is empty, put 0
+                    				  //this is important, because framework thinks that empty place is data type of String[],
+                    				  //therefore it cannot be convertet to int[]
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+
+    <!-- Error messages -->
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+
+    <form action="/solve" method="post" onsubmit="handleEmptyInputs()">
+        <table>
+            <tr th:each="row, rowIndex : ${board}">
+                <td th:each="cell, colIndex : ${row}">
+                    <input type="number" min="0" max="9" th:value="${cell != 0 ? cell : ''}" name="boardInput" />
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Solve</button>
+    </form>
+
+    <!-- Regenerate button -->
+    <form action="/regenerate" method="post">
+        <button type="submit">Regenerate</button>
+    </form>
+
+    <div th:if="${solved}">
+        <h2>Sudoku solved!!!</h2>
+    </div>
+</body>
+</html>
